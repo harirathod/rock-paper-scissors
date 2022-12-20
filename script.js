@@ -20,7 +20,7 @@ function getComputerChoice() {
 
 function getPlayerSelection(move) {
     if(move !== 'rock' && move !== 'paper' && move !== 'scissors') {
-        alert('Your move was not valid.');
+        alert('Your move was not valid!');
         return undefined;
     }
     return move;
