@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -14,18 +15,29 @@
         <button id="scissors">Scissors</button>
     </div>
     <div class="results-container">
-        <div class="player-display">
-            <!-- content determined by javascript -->
-        </div>
-        <div class="computer-display">
-            <!-- content determined by javascript -->
+        <div class="player-computer-display">
+            <div class="player-display">
+                <!-- content determined by javascript -->
+            </div>
+            <div class="computer-display">
+                <!-- content determined by javascript -->
+            </div>
         </div>
         <div class="results-display">
             <!-- content determined by javascript -->
         </div>
         <div id="score">  
-
+            <div id="player-score">0</div>
+            <div>-</div>
+            <div id="computer-score">0</div>
         </div>
+    </div>
+    <div>
+        <dialog id="dialog">
+            <form method="dialog">
+                <button>Restart?</button>
+            </form>
+        </dialog>
     </div>
 </body>
 </html>
