@@ -1,7 +1,6 @@
 // Fields
 
-
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
 let playerSelectionDisplay = document.querySelector('.player-display');
 let playerWon = false;
@@ -13,13 +12,14 @@ let playerScoreDisplay = document.querySelector('#player-score');
 let computerScoreDisplay = document.querySelector('#computer-score');
 
 
-// Methods
+// Methods for the functionality of picking each move.
 
 buttons.forEach((button) => button.addEventListener('click', function(e) {
     let playerSelection = getPlayerSelection(e.target.id);
     let computerSelection = getComputerChoice();
     displayResults(playerSelection, computerSelection, playRound(playerSelection, computerSelection));
     updateScore();
+    checkWinner();
 }));
 
 
@@ -71,4 +71,34 @@ function updateScore() {
     }
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
+}
+
+function reset() {
+    playerScore = computerScore = 0;
+    playerWon = computerWon = false;
+    updateScore();
+
+    playerSelectionDisplay.textContent = "";
+    computerSelectionDisplay.textContent = "";
+    resultsDisplay.textContent = "";
+}
+
+// Display when the game finishes.
+
+let dialog = document.querySelector('#dialog');
+let button = document.querySelector('#dialog button');
+button.addEventListener('click', reset);
+let p = document.createElement('p');
+
+function checkWinner() {
+    if(playerScore === 5) {
+        p.textContent = 'Congratulation! You saved the world!';
+        dialog.insertBefore(p, document.querySelector('#dialog form'));
+        dialog.showModal();
+    }
+    else if(computerScore === 5) {
+        p.textContent = 'You lost. The robots took over the world and enslaved humanity...';
+        dialog.insertBefore(p, document.querySelector('#dialog form'));
+        dialog.showModal();
+    }
 }
