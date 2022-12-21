@@ -1,8 +1,51 @@
 * {
-    border: 0.1px solid red;
+    color: burlywood;
 }
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+button {
+    color: burlywood;
+    padding: 16px;
+    background-color: transparent;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+}
+
+.move-container > * {
+    font-size: 4em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.move-container {
+    margin-top: 5em;
+    padding: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 64px;
+}
+
+.results-container {
+    align-items: center;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-computer-display {
+    display: flex;
+    gap: 64px;
+}
+
 
 #score {
     display: flex;
-    gap: 16px;
+    gap: 8px;
 }
