@@ -48,10 +48,12 @@ function playRound(playerSelection, computerSelection) {
     }
     else if ((playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper') ||(playerSelection === 'rock' && computerSelection === 'scissors')) {
         playerWon = true;
+        playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1);
         return (`${playerSelection} beats ${computerSelection}! You win!`);
     }
     else {
         computerWon = true;
+        playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1);
         return (`${playerSelection} loses to ${computerSelection}. You lost..`);
     }
 }
@@ -92,12 +94,12 @@ let p = document.createElement('p');
 
 function checkWinner() {
     if(playerScore === 5) {
-        p.textContent = 'Congratulation! You saved the world!';
+        p.textContent = 'Congratulation, you won! Here\'s a 🍪';
         dialog.insertBefore(p, document.querySelector('#dialog form'));
         dialog.showModal();
     }
     else if(computerScore === 5) {
-        p.textContent = 'You lost. The robots took over the world and enslaved humanity...';
+        p.textContent = 'Too bad, you lost. No cookie 🍪 for you.';
         dialog.insertBefore(p, document.querySelector('#dialog form'));
         dialog.showModal();
     }
