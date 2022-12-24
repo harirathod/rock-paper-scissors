@@ -33,17 +33,22 @@ button {
 }
 
 .move-container > * {
+    flex: 0 1 auto;
     font-size: 4em;
     font-family: Montserrat, 'Gill Sans';
 
 }
 
+button:hover {
+    border: 2px solid;
+}
+
 .move-container {
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 5em;
     padding: 8px;
     display: flex;
-    justify-content: space-evenly;
     gap: 64px;
 }
 
