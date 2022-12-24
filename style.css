@@ -1,85 +1,92 @@
 body {
-    background-color: #051114;
-    color: #fbb269;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    font-family: 'Objektiv MK3', 'Poppins', 'Open Sans', Arial, sans-serif;
+  background-color: #051114;
+  color: #fbb269;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  font-family: "Objektiv MK3", "Poppins", "Open Sans", Arial, sans-serif;
 }
 
 button {
-    color: #fbb269;
-    padding: 16px;
-    background-color: transparent;
-    border: 1px dashed;
-    border-radius: 10px;
-}
-
-#rock {
-    font-weight: 600;
-    border-color: #ee5b5c;
-    color: #ee5b5c;
-}
-#paper {
-    font-weight: 600;
-    border-color: #fbb269;
-    color: #fbb269;
-}
-#scissors {
-    font-weight: 600;
-    border-color: #b3d6cc;
-    color: #b3d6cc;
-}
-
-.move-container > * {
-    flex: 0 1 auto;
-    font-size: 4em;
-    font-family: Montserrat, 'Gill Sans';
-
+  color: #fbb269;
+  padding: 16px;
+  background-color: transparent;
+  border: 1px dashed;
+  border-radius: 10px;
 }
 
 button:hover {
-    border: 2px solid;
+  border: 1px solid;
+}
+
+#rock {
+  font-weight: 600;
+  border-color: #ee5b5c;
+  color: #ee5b5c;
+}
+#paper {
+  font-weight: 600;
+  border-color: #fbb269;
+  color: #fbb269;
+}
+#scissors {
+  font-weight: 600;
+  border-color: #b3d6cc;
+  color: #b3d6cc;
+}
+
+.move-container > * {
+  flex: 0 0 0;
+  font-size: 4em;
+  font-family: Montserrat, "Gill Sans";
+  transition: 0.3s;
+  opacity: 0.4;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+  opacity: 1;
+  border: solid;
+  text-shadow: #051114;
+  transform: scale(1.1);
 }
 
 .move-container {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 5em;
-    padding: 8px;
-    display: flex;
-    gap: 64px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5em;
+  padding: 8px;
+  display: flex;
+  gap: 64px;
 }
 
 .results-container {
-    align-items: center;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .player-computer-display {
-    display: flex;
-    gap: 64px;
+  display: flex;
+  gap: 64px;
 }
-
 
 #score {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
- 
+
 #dialog {
-    color: #fbb269;
-    background-color: #051114;
-    box-shadow: 8px 8px 1px #ee5b5b;
-    border-radius: 16px;
-    
+  color: #fbb269;
+  background-color: #051114;
+  box-shadow: 8px 8px 1px #ee5b5b;
+  border-radius: 16px;
 }
 
 form {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
-
