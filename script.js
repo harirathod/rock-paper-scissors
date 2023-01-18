@@ -1,5 +1,6 @@
 // Fields
-
+const root = document.documentElement;
+root.className = 'dark';
 let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
 let playerSelectionDisplay = document.querySelector('.player-display');
@@ -17,6 +18,9 @@ let baseColor = leftBar.style.backgroundColor;
 let winColor = '#40df58';
 let loseColor = '#eb4343';
 
+let darkModeBtn = document.querySelector('#color-mode');
+
+
 // Methods for the functionality of picking each move.
 
 buttons.forEach((button) => button.addEventListener('click', function(e) {
@@ -26,6 +30,11 @@ buttons.forEach((button) => button.addEventListener('click', function(e) {
     updateScore();
     checkWinner();
 }));
+
+darkModeBtn.addEventListener('click', function(e) {
+    console.log('stuff');
+    setNewTheme();
+});
 
 
 function getComputerChoice() {
@@ -67,6 +76,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function displayResults(playerSelection, computerSelection, displayText) {
+    playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1);
+    computerSelection = computerSelection.substring(0,1).toUpperCase() + computerSelection.substring(1);
     playerSelectionDisplay.textContent = `You picked: ${playerSelection}`;
     computerSelectionDisplay.textContent = `They picked: ${computerSelection}`;
     resultsDisplay.textContent = displayText;
@@ -126,5 +137,17 @@ function checkWinner() {
         p.textContent = 'Too bad, you lost. No cookie 🍪 for you.';
         dialog.insertBefore(p, document.querySelector('#dialog form'));
         dialog.showModal();
+    }
+}
+
+// change themes
+
+function setNewTheme() {
+    const root = document.documentElement;
+    if(root.className === 'dark') {
+        root.className = 'light';
+    }
+    else if (root.className === 'light') {
+        root.className = 'dark';
     }
 }
