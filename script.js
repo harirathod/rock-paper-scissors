@@ -1,5 +1,5 @@
 // Fields
-
+let body = document.querySelector('body');
 let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
 let playerSelectionDisplay = document.querySelector('.player-display');

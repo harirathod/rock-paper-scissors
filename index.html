@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
+    <button id="color-mode">
+        <span class="material-symbols-outlined" id="dark-mode">
+            dark_mode
+        </span>
+        <span id="light-mode" class="material-symbols-outlined">
+            wb_sunny
+        </span>
+    </button>
     <div class="move-container">
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
@@ -26,13 +40,13 @@
         <div class="results-display">
             <!-- content determined by javascript -->
         </div>
-        <div id="score">  
+        <div id="score">
             <div id="player-score">0</div>
             <div>-</div>
             <div id="computer-score">0</div>
         </div>
     </div>
-    <div class="dialog-container"> 
+    <div class="dialog-container">
         <dialog id="dialog">
             <form method="dialog">
                 <button>Restart?</button>
@@ -40,4 +54,5 @@
         </dialog>
     </div>
 </body>
+
 </html>
