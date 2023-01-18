@@ -1,6 +1,26 @@
+:root.dark {
+  --color-base-bg: #051114;
+  --color-base-text: #fbb269;
+  --rock-btn: #ee5b5c;
+  --paper-btn: #fbb269;
+  --scissors-btn: #b3d6cc;
+  --hbar-bg: #2f2f2f;
+  --light-dark-btn:#d7e5e5;
+}
+
+:root.dark {
+  --color-base-bg: #010c04;
+  --color-base-text: #fbb269;
+  --rock-btn: #ee5b5c;
+  --paper-btn: #fbb269;
+  --scissors-btn: #b3d6cc;
+  --hbar-bg: #2f2f2f;
+  --light-dark-btn:#d7e5e5;
+}
+
 body {
-  background-color: #010c04;
-  color: #fbb269;
+  background-color: var(--color-base-bg);
+  color: var(--color-base-text);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -36,18 +56,18 @@ button:hover {
 
 #rock {
   font-weight: 600;
-  border-color: #ee5b5c;
-  color: #ee5b5c;
+  border-color: var(--rock-btn);
+  color: var(--rock-btn);
 }
 #paper {
   font-weight: 600;
-  border-color: #fbb269;
-  color: #fbb269;
+  border-color: var(--paper-btn);
+  color: var(--paper-btn);
 }
 #scissors {
   font-weight: 600;
-  border-color: #b3d6cc;
-  color: #b3d6cc;
+  border-color: var(--scissors-btn);
+  color: var(--scissors-btn);
 }
 
 .move-container > * {
@@ -65,13 +85,12 @@ button:hover {
   opacity: 1;
   border: 3px solid;
   padding: calc(16px - 2px);
-  text-shadow: #051114;
   transform: scale(1.05);
 }
 
 .move-container {
   flex-wrap: wrap;
-  margin-top: 5em;
+  margin: 5em 0em 5em;
   padding: 8px;
   display: flex;
   gap: 64px;
@@ -86,14 +105,14 @@ button:hover {
 
 .player-computer-display {
   display: flex;
-  gap: 24rem;
+  gap: 28rem;
 }
 
 .player-horizontal-bar,
 .computer-horizontal-bar {
   height: 0.2rem;
-  width: 7rem;
-  background-color: #2f2f2f;
+  width: 10rem;
+  background-color: var(--hbar-bg);
   border-radius: 100px;
   margin: 4px;
 }
@@ -118,9 +137,9 @@ button:hover {
 }
 
 #dialog {
-  color: #fbb269;
-  background-color: #051114;
-  box-shadow: 8px 8px 1px #ee5b5b;
+  color: var(--color-base-text);
+  background-color: var(--color-base-bg);
+  box-shadow: 8px 8px 0px var(--rock-btn);
   border-radius: 16px;
 }
 
@@ -141,10 +160,10 @@ form {
   margin: 16px;
   border: 0px;
   border-radius: 5px;
-  background-color: rgb(215, 229, 229);
-  box-shadow: 2px 2px 3px rgba(34, 34, 34, 0.2);
+  background-color: var(--light-dark-btn);
+  box-shadow: 2px 2px 3px #22222233;
 }
 
 * {
-  border: 0px solid red;
+  border: 1px solid red;
 }
