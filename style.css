@@ -1,11 +1,19 @@
 body {
-  background-color: #ffffff;
+  background-color: #010c04;
   color: #fbb269;
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
   font-family: "Objektiv MK3", "Poppins", "Open Sans", Arial, sans-serif;
+}
+
+#score {
+  font-size: 2rem;
+  font-family: fantasy, "Poppins", "Objektiv Mk3", Arial, sans-serif;
+  display: flex;
+  gap: 16px;
+  justify-content: space-evenly;
 }
 
 button {
@@ -58,7 +66,7 @@ button:hover {
   border: 3px solid;
   padding: calc(16px - 2px);
   text-shadow: #051114;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .move-container {
@@ -78,12 +86,35 @@ button:hover {
 
 .player-computer-display {
   display: flex;
-  gap: 64px;
+  gap: 24rem;
+}
+
+.player-horizontal-bar,
+.computer-horizontal-bar {
+  height: 0.2rem;
+  width: 7rem;
+  background-color: #2f2f2f;
+  border-radius: 100px;
+  margin: 4px;
+}
+
+.bar-and-display {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #score {
+  width: 24rem;
+  box-sizing: border-box;
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
+}
+#score > * {
+  width: 1rem;
+  box-sizing: border-box;
 }
 
 #dialog {
@@ -114,7 +145,6 @@ form {
   box-shadow: 2px 2px 3px rgba(34, 34, 34, 0.2);
 }
 
-*,
-button#color-mode {
+* {
   border: 0px solid red;
 }

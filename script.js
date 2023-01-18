@@ -1,5 +1,5 @@
 // Fields
-let body = document.querySelector('body');
+
 let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
 let playerSelectionDisplay = document.querySelector('.player-display');
@@ -11,6 +11,11 @@ let computerScore = 0;
 let playerScoreDisplay = document.querySelector('#player-score');
 let computerScoreDisplay = document.querySelector('#computer-score');
 
+let rightBar = document.querySelector('.computer-horizontal-bar');
+let leftBar = document.querySelector('.player-horizontal-bar');
+let baseColor = leftBar.style.backgroundColor;
+let winColor = '#40df58';
+let loseColor = '#eb4343';
 
 // Methods for the functionality of picking each move.
 
@@ -44,16 +49,19 @@ function playRound(playerSelection, computerSelection) {
         return ('No round was played.');
     }
     else if(playerSelection === computerSelection) {
+        updateBars(playerWon, computerWon);
         return ('Draw!');
     }
     else if ((playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper') ||(playerSelection === 'rock' && computerSelection === 'scissors')) {
         playerWon = true;
         playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1);
+        updateBars(playerWon, computerWon);
         return (`${playerSelection} beats ${computerSelection}! You win!`);
     }
     else {
         computerWon = true;
         playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1);
+        updateBars(playerWon, computerWon);
         return (`${playerSelection} loses to ${computerSelection}. You lost..`);
     }
 }
@@ -79,10 +87,26 @@ function reset() {
     playerScore = computerScore = 0;
     playerWon = computerWon = false;
     updateScore();
+    updateBars(false, false);
 
     playerSelectionDisplay.textContent = "";
     computerSelectionDisplay.textContent = "";
     resultsDisplay.textContent = "";
+}
+
+function updateBars(playerWon, computerWon) {
+    if(playerWon && !computerWon) {
+        leftBar.style.backgroundColor = winColor;
+        rightBar.style.backgroundColor = loseColor;
+    }
+    else if (computerWon) {
+        leftBar.style.backgroundColor = loseColor;
+        rightBar.style.backgroundColor = winColor;
+    }
+    else {
+        leftBar.style.backgroundColor = baseColor;
+        rightBar.style.backgroundColor = baseColor;
+    }
 }
 
 // Display when the game finishes.
