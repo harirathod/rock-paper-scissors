@@ -1,6 +1,6 @@
 // Fields
 const root = document.documentElement;
-root.className = 'dark';
+root.className = 'light';
 let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
 let playerSelectionDisplay = document.querySelector('.player-display');
@@ -15,7 +15,7 @@ let computerScoreDisplay = document.querySelector('#computer-score');
 let rightBar = document.querySelector('.computer-horizontal-bar');
 let leftBar = document.querySelector('.player-horizontal-bar');
 let baseColor = leftBar.style.backgroundColor;
-let winColor = '#40df58';
+let winColor = '#348a34';
 let loseColor = '#eb4343';
 
 let darkModeBtn = document.querySelector('#color-mode');
@@ -150,4 +150,22 @@ function setNewTheme() {
     else if (root.className === 'light') {
         root.className = 'dark';
     }
+    changeColorSwitchBtnIcon();
 }
+
+function changeColorSwitchBtnIcon() {
+    const colorSwitchBtn = document.querySelector('#color-mode');
+    const sunnyIcon = document.querySelector('#light-mode');
+    const moonIcon = document.querySelector('#dark-mode');
+    if(root.className === 'dark') {
+        moonIcon.style.display = 'block'
+        sunnyIcon.style.display = 'none';
+    }
+    else if (root.className ==='light') {
+        sunnyIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    }
+}
+changeColorSwitchBtnIcon();
+
+// switch the light and dark mode symbols
