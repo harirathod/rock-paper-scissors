@@ -31,7 +31,7 @@ body {
 }
 
 #score {
-  font-size: 2rem;
+  font-size: 32px;
   font-family: fantasy, "Poppins", "Objektiv Mk3", Arial, sans-serif;
   display: flex;
   gap: 16px;
@@ -78,7 +78,7 @@ button:hover {
 
 .move-container > * {
   flex: 0 0 0;
-  font-size: 4em;
+  font-size: 56px;
   font-family: Montserrat, "Gill Sans";
   transition: 0.3s;
   opacity: 0.45;
@@ -96,6 +96,7 @@ button:hover {
 
 .move-container {
   flex-wrap: wrap;
+  justify-content: center;
   margin: 5em 0em 5em;
   padding: 8px;
   display: flex;
@@ -103,6 +104,7 @@ button:hover {
 }
 
 .results-container {
+  width: 92vmin;
   align-items: center;
   gap: 16px;
   display: flex;
@@ -110,21 +112,25 @@ button:hover {
 }
 
 .player-computer-display {
+  width: inherit;
   display: flex;
-  gap: 28rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .player-horizontal-bar,
 .computer-horizontal-bar {
-  height: 0.2rem;
-  width: 10rem;
+  height: 2px;
+  width: inherit;
   background-color: var(--hbar-bg);
   border-radius: 100px;
   margin: 4px;
 }
 
 .bar-and-display {
-  width: 12rem;
+  margin: 4px;
+  width: 10.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,14 +138,16 @@ button:hover {
 }
 
 #score {
-  width: 24rem;
+  width: inherit;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 #score > * {
-  width: 1rem;
+  flex-shrink: 1;
+  width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
 
 #dialog {
@@ -167,4 +175,8 @@ form {
   border-radius: 5px;
   background-color: var(--light-dark-btn);
   box-shadow: 2px 2px 3px #22222233;
+}
+
+* {
+  border: 1px solid red;
 }

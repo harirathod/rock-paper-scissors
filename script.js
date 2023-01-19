@@ -15,7 +15,7 @@ let computerScoreDisplay = document.querySelector('#computer-score');
 let rightBar = document.querySelector('.computer-horizontal-bar');
 let leftBar = document.querySelector('.player-horizontal-bar');
 let baseColor = leftBar.style.backgroundColor;
-let winColor = '#348a34';
+let winColor = '#9fe733';
 let loseColor = '#eb4343';
 
 let darkModeBtn = document.querySelector('#color-mode');
