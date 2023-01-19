@@ -176,7 +176,3 @@ form {
   background-color: var(--light-dark-btn);
   box-shadow: 2px 2px 3px #22222233;
 }
-
-* {
-  border: 1px solid red;
-}
