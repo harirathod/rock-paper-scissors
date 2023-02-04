@@ -3,6 +3,9 @@
 # Overview
 A game of rock paper scissors that can be played in a web browser.
 
+# Live Demo
+- Click **[here](https://harirathod.github.io/rock-paper-scissors)** for the live demo.
+
 ## Technologies Used
 - Vanilla JavaScript
 - HTML5
