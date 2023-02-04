@@ -1,24 +1,35 @@
 // Fields
 const root = document.documentElement;
 root.className = 'light';
+
 let buttons = document.querySelectorAll('.move-container button');
 let resultsDisplay = document.querySelector('.results-display');
+
 let playerSelectionDisplay = document.querySelector('.player-display');
 let playerWon = false;
 let playerScore = 0;
+
 let computerSelectionDisplay = document.querySelector('.computer-display');
 let computerWon = false;
 let computerScore = 0;
+
 let playerScoreDisplay = document.querySelector('#player-score');
 let computerScoreDisplay = document.querySelector('#computer-score');
 
 let rightBar = document.querySelector('.computer-horizontal-bar');
 let leftBar = document.querySelector('.player-horizontal-bar');
+
 let baseColor = leftBar.style.backgroundColor;
 let winColor = '#9fe733';
 let loseColor = '#eb4343';
 
 let darkModeBtn = document.querySelector('#color-mode');
+
+let modal = document.querySelector('.modal');
+let modalButton = document.querySelector('.modal-button');
+modalButton.addEventListener('click', reset);
+let div = document.createElement('div');
+let overlay = document.querySelector('.overlay');
 
 
 // Methods for the functionality of picking each move.
@@ -95,6 +106,8 @@ function updateScore() {
 }
 
 function reset() {
+    overlay.style.display = 'none';
+    modal.style.display = 'none';
     playerScore = computerScore = 0;
     playerWon = computerWon = false;
     updateScore();
@@ -122,21 +135,20 @@ function updateBars(playerWon, computerWon) {
 
 // Display when the game finishes.
 
-let dialog = document.querySelector('#dialog');
-let button = document.querySelector('#dialog button');
-button.addEventListener('click', reset);
-let p = document.createElement('p');
-
 function checkWinner() {
+    
     if(playerScore === 5) {
-        p.textContent = 'Congratulation, you won! Here\'s a 🍪';
-        dialog.insertBefore(p, document.querySelector('#dialog form'));
-        dialog.showModal();
+        overlay.style.display = "block";
+        div.textContent = 'Congratulation, you won! Here\'s a 🍪';
+        modal.insertBefore(div, modalButton);
+        modal.style.display = "block";
+        
     }
     else if(computerScore === 5) {
-        p.textContent = 'Too bad, you lost. No cookie 🍪 for you.';
-        dialog.insertBefore(p, document.querySelector('#dialog form'));
-        dialog.showModal();
+        overlay.style.display = "block";
+        div.textContent = 'Too bad, you lost. No cookie 🍪 for you.';
+        modal.insertBefore(div, modalButton);
+        modal.style.display = "block";
     }
 }
 
@@ -154,7 +166,6 @@ function setNewTheme() {
 }
 
 function changeColorSwitchBtnIcon() {
-    const colorSwitchBtn = document.querySelector('#color-mode');
     const sunnyIcon = document.querySelector('#light-mode');
     const moonIcon = document.querySelector('#dark-mode');
     if(root.className === 'dark') {

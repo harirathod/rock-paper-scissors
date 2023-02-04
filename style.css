@@ -28,6 +28,7 @@ body {
   gap: 16px;
   align-items: center;
   font-family: "Objektiv MK3", "Poppins", "Open Sans", Arial, sans-serif;
+  margin: 0;
 }
 
 #score {
@@ -126,6 +127,7 @@ button:hover {
   background-color: var(--hbar-bg);
   border-radius: 100px;
   margin: 4px;
+  display: none;
 }
 
 .bar-and-display {
@@ -150,16 +152,22 @@ button:hover {
   text-align: center;
 }
 
-#dialog {
+.modal {
+  position: fixed;
+  top: 40%;
+  z-index: 2;
+  padding: 24px;
+  z-index: +1;
   color: var(--color-base-text);
   background-color: var(--color-base-bg);
   box-shadow: 8px 8px 0px var(--rock-btn);
   border-radius: 16px;
+  display: none;
 }
 
-form {
-  display: flex;
-  justify-content: flex-end;
+button.modal-button {
+  float: inline-end;
+  margin-top: 16px;
 }
 
 .material-symbols-outlined {
@@ -176,3 +184,13 @@ form {
   background-color: var(--light-dark-btn);
   box-shadow: 2px 2px 3px #22222233;
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.467);
+}
+
