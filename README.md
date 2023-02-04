@@ -1,11 +1,15 @@
 # Rock, paper, scissors! 
 
-## Overview
-Go to **https://harirathod.github.io/rock-paper-scissors/** to check out my game 👾!
+# Overview
+A game of rock paper scissors that can be played in a web browser.
 
-This is my first project using JavaScript.
-
-## Built With
+## Technologies Used
 - Vanilla JavaScript
 - HTML5
 - CSS3
+
+# Compatibility
+- Compatible with both desktop and mobile users.
+
+# Project Status
+- The project is *completed*.
