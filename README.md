@@ -15,4 +15,4 @@ A game of rock paper scissors that can be played in a web browser.
 - Compatible with both desktop and mobile users.
 
 # Project Status
-- The project is **completed**.
+- The project is under development.
