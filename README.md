@@ -1,11 +1,12 @@
 # Rock, paper, scissors! 
 
 ## Contents
-- [Overview](#overview)
-- [Live Demo](#live-demo)
-- [Techologies Used](#technologies-used)
-- [Compatibility](#compatibility)
-- [Project Status](#project-status)
+- **[Overview](#overview)**
+- **[Live Demo](#live-demo)**
+- **[Techologies Used](#technologies-used)**
+- **[Purpose of Project](#purpose-of-project)**
+- **[Compatibility](#compatibility)**
+- **[Project Status](#project-status)**
 
 ## Overview
 - A game of rock paper scissors that is played in the web browser. 
@@ -20,6 +21,12 @@
 - Vanilla JavaScript
 - HTML5
 - CSS3
+
+## Purpose of Project
+
+This is the first project I've built using JavaScript.
+
+This project was undertaken to supplement my learning of web development through `The Odin Project`, through putting theory into practice. 
 
 ## Compatibility
 - Compatible with both desktop and mobile users.
