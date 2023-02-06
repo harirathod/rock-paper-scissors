@@ -26,7 +26,7 @@
 
 This is the first project I've built using JavaScript.
 
-This project was undertaken to supplement my learning of web development through `The Odin Project`, through putting theory into practice. 
+This project was undertaken to supplement my learning of web development through `The Odin Project`, by putting the theory learned into practice. 
 
 ## Compatibility
 - Compatible with both desktop and mobile users.
